@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({agregar}) => {
 
@@ -20,9 +21,13 @@ export const AddCategory = ({agregar}) => {
 
     //meterlo en el form nos permite que se envie al darle a enter
     return(
-        <form onSubmit={(event)=>onSubmit(event)}>
+        <form onSubmit={(event)=>onSubmit(event)} aria-label="form">
             <input type="text" value={inputValue} placeholder="Escribe..."  onChange={onInputChange}/>
         </form>
     )
+}
+
+AddCategory.propTypes ={
+    agregar: PropTypes.func.isRequired
 }
 
